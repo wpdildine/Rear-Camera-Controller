@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "sourceMap": true,
+        "rootDir": "./src",
+        "outDir": "./build-tsc"
+    },
+    "files": [
+      "./node_modules/@types/node/index.d.ts",
+      "./src/Modules/RearCameraController.ts",
+      "./src/Modules/OrientationController/Orientation.ts",
+      "./src/Modules/Events/EventCallback.ts",
+      "./src/Modules/Events/EventDispatcher.ts",
+      "./src/Modules/Events/EventListener.ts",
+      "./src/index.d.ts",
+      "./src/index.ts"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist"
+    ]
+
+}

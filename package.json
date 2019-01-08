@@ -1,0 +1,46 @@
+{
+  "name": "webarcontroller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc --watch",
+    "monitor": "cd src && nodemon .",
+    "clean": "rm -rf build",
+    "tsc": "./node_modules/.bin/tsc",
+    "babel": "./node_modules/.bin/babel build-tsc --out-dir build-babel --source-maps",
+    "webpack": "webpack && cp public/* dist",
+    "clean-build": "rm -rf build-tsc build-babel",
+    "build": "npm run clean && npm run tsc && npm run babel && npm run webpack && npm run clean-build",
+    "srv": "http-server ./dist -p 3000 -o -g -S -K key.pem -C server.cert"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
+        }
+      ]
+    ]
+  },
+  "author": "William Dildine",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^8.5.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.12.7",
+    "tsc": "^1.20150623.0",
+    "types": "^0.1.1",
+    "typescript": "^2.6.2",
+    "typings": "^2.1.1",
+    "webpack": "^3.10.0"
+  }
+}
